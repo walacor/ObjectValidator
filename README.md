@@ -7,7 +7,7 @@
 [![License Apache 2.0][badge-license]][license]
 [![Walacor (1100127456347832400)](https://img.shields.io/badge/My-Discord-%235865F2.svg?label=Walacor)](https://discord.gg/BaEWpsg8Yc)
 [![Walacor (1100127456347832400)](https://img.shields.io/static/v1?label=Walacor&message=LinkedIn&color=blue)](https://www.linkedin.com/company/walacor/)
-[![Walacor (1100127456347832400)](https://img.shields.io/static/v1?label=Walacor&message=Website&color)](https://www.walacor.com/)
+[![Walacor (1100127456347832400)](https://img.shields.io/static/v1?label=Walacor&message=Website&color)](https://www.walacor.com/product/)
 
 </div>
 
@@ -39,7 +39,7 @@ There are 2 hashes that get created:
 
 ## Running in a container
 
-It is highly advisable to run this in a container to ensure isolation and have the ability to use a dedicated secure enclave.
+It is recommended running ObjectValidator in a container to ensure isolation and have the ability to use a dedicated secure enclave.
 
 ## Container setup
 
@@ -57,18 +57,19 @@ RUN pip install “./requirements.txt
 # Command to run the Python script
 CMD [“python”, “./ObjectValidator.py”] 
 ```
-
 ## Walacor Instance
 
 ### Why use Walacor?
 
 > Ensuring the integrity of data eventually comes down to a single component that is the linchpin of trust.  For most solutions this requires reliance on a complex stack of integrated technologies.  Walacor is a single software solution who's sole mission is to ensure data integrity...What you put in is exactly what you get out, and it can be proven. [Read More](https://www.walacor.com)
 
-You need access to a running Walacor instance with Admin user credentials
+You need access to a running Walacor instance with Admin user credentials. I you do not have a Walacor instance you can create one for a minimal fee on the cloud services. Detailed installation instructions are also provided.
 
 [[AWS Marketplace]](https://aws.amazon.com/marketplace/pp/prodview-n6yuvr2g44wpo)
+[[AWS install Doc]](https://admindoc.walacor.com/admin-documentation/latest/aws-marketplace-server-instance-installation)
 
 [[Azure Marketplace]](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=walacor)
+[[Azure install Doc]](https://admindoc.walacor.com/admin-documentation/latest/azure-server-instance-installation)
 
 ## Getting Started
 
@@ -112,7 +113,6 @@ Validate Signatures from S3 compatible source
 
 ```sh
 S3_Validation.py 2 2 https://mywalacor.myplace.com/api WalacorUser WalacorPassword LogFile.txt 20 RootDir "" "" AWSAccessKey AWSSecretKey us-west-1 s3Bucket
-
 ```
 
 # Potential enhancements
@@ -120,3 +120,4 @@ S3_Validation.py 2 2 https://mywalacor.myplace.com/api WalacorUser WalacorPasswo
 - [ ] Make the directory hash more resilient to collisions
 - [ ] Verify container setup
 - [ ] Make the hashing algorithm a setting
+- [ ] Enable the 8th parameter (root)
